@@ -13,13 +13,14 @@ public class BaseTest {
         co.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(co);
         driver.manage().window().maximize();
-        driver.get("http://localhost:3000/income/create");
+      //  driver.get("http://localhost:3000/income/create");
+        driver.get("http://localhost:3000/expense/create");
 
 
     }
 
     @AfterEach
     public void closeBrowser() {
-        //   driver.close();
+          driver.close();
     }
 }
