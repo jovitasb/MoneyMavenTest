@@ -14,13 +14,14 @@ public class BaseTest {
         driver = new ChromeDriver(co);
         driver.manage().window().maximize();
       //  driver.get("http://localhost:3000/income/create");
-        driver.get("http://localhost:3000/expense/create");
+      //  driver.get("http://localhost:3000/expense/create");
+        driver.get("http://localhost:3000/login");
 
 
     }
 
-    @AfterEach
-    public void closeBrowser() {
-          driver.close();
-    }
+//    @AfterEach
+//    public void closeBrowser() {
+//          driver.close();
+//    }
 }
