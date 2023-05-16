@@ -19,30 +19,30 @@ public class ExpensePageTest extends BaseTest {
         for (int i = 0; i < 3; i++) {
 
             expensePage.clickType();
-            expensePage.selectType("Healthcare");
+            expensePage.selectType("food");
             expensePage.clickAmount();
-            expensePage.setAmount("20");
+            expensePage.setAmount("30");
             expensePage.clickDescription();
-            expensePage.setDescription("Vitamins");
+            expensePage.setDescription("shop");
             expensePage.clickDate();
             expensePage.clickToday();
             expensePage.clickSubmitButton();
 
-            driver.get("http://localhost:3000/expense");
+            driver.get("http://localhost:3000/expense/create");
 
             // Find the element that you want to scroll to
-             WebElement createNewButton = driver.findElement(By.xpath("//button[normalize-space()='Create new']"));
+           //  WebElement createNewButton = driver.findElement(By.xpath("//button[normalize-space()='Create new']"));
 
              // Create an instance of the JavascriptExecutor
-            JavascriptExecutor js = (JavascriptExecutor) driver;
+           // JavascriptExecutor js = (JavascriptExecutor) driver;
 
             // Scroll the page to the element
-            js.executeScript("arguments[0].scrollIntoView();", createNewButton);
+          //  js.executeScript("arguments[0].scrollIntoView();", createNewButton);
 
         //    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         //    WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='Create new']")));
 
-            createNewButton.click();
+         //   createNewButton.click();
         }
     }
 }

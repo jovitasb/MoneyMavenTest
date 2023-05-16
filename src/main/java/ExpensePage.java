@@ -25,7 +25,7 @@ public class ExpensePage extends AbstractObjectPage {
     public void selectType(String s) {
         WebElement dropdown = driver.findElement(By.xpath("//select[@name='expenseTypeName']"));
         Select select = new Select(dropdown);
-        select.selectByIndex(8);
+        select.selectByIndex(1);
         WebElement selectedOption = select.getFirstSelectedOption();
         selectedOption.click();
     }

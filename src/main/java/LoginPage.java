@@ -1,40 +1,38 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends AbstractObjectPage{
-        private By usernameInput = By.xpath("//input[@name='username']");
-        private By passwordInput = By.xpath("//input[@name='password']");
-        private By loginButton = By.cssSelector("button[type='submit']");
-        //private By errorMessage = By.id("error-message");
+    @FindBy(xpath = "//input[@name='username']")
+    private WebElement usernameInput;
 
-        public LoginPage(WebDriver driver) {
+    @FindBy(xpath = "//input[@name='password']")
+    private WebElement passwordInput;
+
+    @FindBy(xpath = "button[type='submit']")
+    private WebElement loginButton;
+
+    public LoginPage(WebDriver driver) {
             super(driver);
         }
-
         public void clickUsername(){
-            WebElement usernameField = driver.findElement(usernameInput);
-            usernameField.click();
+            usernameInput.click();
 
         }
         public void setUsername(String username) {
-            WebElement usernameField = driver.findElement(usernameInput);
-            usernameField.sendKeys(username);
+            usernameInput.sendKeys(username);
         }
 
     public void clickPassword(){
-        WebElement passwordField = driver.findElement(passwordInput);
-        passwordField.click();
+            passwordInput.click();
 
     }
         public void setPassword(String password) {
-            WebElement passwordField = driver.findElement(passwordInput);
-            passwordField.sendKeys(password);
+            passwordInput.sendKeys(password);
         }
 
         public void clickLoginButton() {
-            WebElement loginBtn = driver.findElement(loginButton);
-            loginBtn.click();
+            loginButton.click();
         }
 
 //        public String getErrorMessage() {
